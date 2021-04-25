@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/carrot-systems/cs-discovery/src/adapters/cache"
 	"github.com/carrot-systems/cs-discovery/src/adapters/rest"
 	"github.com/carrot-systems/cs-discovery/src/config"
 	"github.com/carrot-systems/cs-discovery/src/core/usecases"
@@ -13,6 +14,7 @@ func main() {
 	ginConfiguration := config.LoadGinConfiguration()
 
 	var discoveryCache usecases.DiscoveryCacheRepo
+	discoveryCache = cache.NewCacheRepository()
 
 	usecasesHandler := usecases.NewInteractor(discoveryCache)
 
