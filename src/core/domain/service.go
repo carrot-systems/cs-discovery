@@ -5,6 +5,7 @@ type ServiceRegistration struct {
 	ExternalUrl string `json:"external_url"`
 }
 
+//TODO: advertise if service is http(s)
 type Service struct {
 	Name        string `json:"name"`
 	ExternalUrl string `json:"external_url"`
